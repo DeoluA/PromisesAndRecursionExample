@@ -4,11 +4,12 @@ const repeatMe = async function(currentIndex) {
 			console.log("currentIndex is:", currentIndex);
 			currentIndex++;
 			if(currentIndex > 5) {
+				console.log("I'm supposed to end here");
 				resolve("everything is done: " + currentIndex);
 			}
 			else{
-				let goAgain = await repeatMe(currentIndex);
-				return goAgain;
+				return repeatMe(currentIndex);
+				// return goAgain;
 			};
 			
 		}, 1000 * currentIndex);
