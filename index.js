@@ -6,6 +6,7 @@ const repeatMe = async function(currentIndex) {
 			if(currentIndex > 5) {
 				console.log("I'm supposed to end here");
 				resolve("everything is done: " + currentIndex);
+				return("everything is done: " + currentIndex);
 			}
 			else{
 				return repeatMe(currentIndex);
@@ -13,6 +14,8 @@ const repeatMe = async function(currentIndex) {
 			};
 			
 		}, 1000 * currentIndex);
+	}).then((result) => {
+		return result;
 	});
 };
 
